@@ -321,14 +321,17 @@
             line-height: 1.75;
         }
 
-        .formation-card a {
+        .formation-card p a,
+        .formation-card p a:link,
+        .formation-card p a:visited {
             color: var(--dark);
             text-decoration: none;
             border-bottom: 1px solid var(--pale);
             transition: border-color 0.2s;
         }
 
-        .formation-card a:hover {
+        .formation-card p a:hover {
+            color: var(--dark);
             border-color: var(--dark);
         }
 

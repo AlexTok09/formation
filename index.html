@@ -429,7 +429,7 @@
             }
 
             .oeuvre img {
-                height: 140px;
+                height: 280px;
             }
         }
 
@@ -624,6 +624,47 @@
         }
 
         .formation-card details .desc-content p:first-child {
+            margin-top: 0;
+        }
+
+        .cours-item details {
+            margin-top: 4px;
+        }
+
+        .cours-item details summary {
+            font-family: var(--sans);
+            font-size: 12px;
+            font-weight: 400;
+            letter-spacing: 0.04em;
+            color: var(--light);
+            cursor: pointer;
+            list-style: none;
+            transition: color 0.2s;
+            padding: 4px 0;
+        }
+
+        .cours-item details summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .cours-item details summary::after {
+            content: ' ↓';
+            font-size: 11px;
+        }
+
+        .cours-item details[open] summary::after {
+            content: ' ↑';
+        }
+
+        .cours-item details summary:hover {
+            color: var(--dark);
+        }
+
+        .cours-item details .desc-content {
+            padding-top: 12px;
+        }
+
+        .cours-item details .desc-content p:first-child {
             margin-top: 0;
         }
 
@@ -1803,15 +1844,30 @@
     <div class="cours-list">
         <div class="cours-item">
             <h3>IA : usages critiques et cultures génératives — CM / 24h</h3>
-            <p>Ce cours propose une introduction critique aux intelligences artificielles génératives, envisagées comme dispositifs techniques, médiatiques, économiques et symboliques. Il accompagne les étudiants dans la compréhension des modèles, de leurs fonctionnements, de leurs biais et de leurs limites. Il examine également leurs usages ordinaires, leurs infrastructures et les reconfigurations de l'industrie du web qu'elles accompagnent ou accélèrent, notamment dans les domaines de l'écriture, des savoirs, du travail et de la création. Une attention particulière est portée aux enjeux industriels et politiques de l'IA, ainsi qu'aux formes de délégation, d'automatisation et de subjectivation qu'elle engage.</p>
+            <details>
+                <summary>Lire le descriptif</summary>
+                <div class="desc-content">
+                    <p>Ce cours propose une introduction critique aux intelligences artificielles génératives, envisagées comme dispositifs techniques, médiatiques, économiques et symboliques. Il accompagne les étudiants dans la compréhension des modèles, de leurs fonctionnements, de leurs biais et de leurs limites. Il examine également leurs usages ordinaires, leurs infrastructures et les reconfigurations de l'industrie du web qu'elles accompagnent ou accélèrent, notamment dans les domaines de l'écriture, des savoirs, du travail et de la création. Une attention particulière est portée aux enjeux industriels et politiques de l'IA, ainsi qu'aux formes de délégation, d'automatisation et de subjectivation qu'elle engage.</p>
+                </div>
+            </details>
         </div>
         <div class="cours-item">
             <h3>Techniques, médias et formes sociales — CM / 12h</h3>
-            <p>Ce cours propose une introduction aux rapports entre techniques, communication et organisation sociale. Il aborde la technique non comme un simple ensemble d'outils, mais comme un milieu qui transforme les formes de vie, les modes de perception, les pratiques collectives et les imaginaires politiques. À partir de textes issus de l'anthropologie, de la philosophie et de la sociologie des techniques, le cours interroge successivement la technicité humaine, l'industrialisation des rapports sociaux, puis les dispositifs numériques de communication.</p>
+            <details>
+                <summary>Lire le descriptif</summary>
+                <div class="desc-content">
+                    <p>Ce cours propose une introduction aux rapports entre techniques, communication et organisation sociale. Il aborde la technique non comme un simple ensemble d'outils, mais comme un milieu qui transforme les formes de vie, les modes de perception, les pratiques collectives et les imaginaires politiques. À partir de textes issus de l'anthropologie, de la philosophie et de la sociologie des techniques, le cours interroge successivement la technicité humaine, l'industrialisation des rapports sociaux, puis les dispositifs numériques de communication.</p>
+                </div>
+            </details>
         </div>
         <div class="cours-item">
             <h3>Étudier les réseaux sociaux numériques — CM / 12h</h3>
-            <p>Ce cours propose une introduction aux approches contemporaines des réseaux sociaux numériques. Il examine leurs dimensions socioculturelles, communicationnelles et identitaires : expression de soi, articulation du privé et du public, formes de visibilité, interactions en ligne et construction des identités numériques. Une séance est consacrée aux méthodes d'enquête appliquées aux plateformes sociales.</p>
+            <details>
+                <summary>Lire le descriptif</summary>
+                <div class="desc-content">
+                    <p>Ce cours propose une introduction aux approches contemporaines des réseaux sociaux numériques. Il examine leurs dimensions socioculturelles, communicationnelles et identitaires : expression de soi, articulation du privé et du public, formes de visibilité, interactions en ligne et construction des identités numériques. Une séance est consacrée aux méthodes d'enquête appliquées aux plateformes sociales.</p>
+                </div>
+            </details>
         </div>
     </div>
 

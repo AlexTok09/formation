@@ -203,6 +203,82 @@
             margin-bottom: 48px;
         }
 
+        /* ── Œuvres ──────────────────────────────────── */
+        .oeuvres-row {
+            display: flex;
+            gap: 20px;
+            margin-top: 48px;
+        }
+
+        .oeuvre {
+            flex: 1 1 0;
+            min-width: 0;
+            margin: 0;
+        }
+
+        .oeuvre img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+            filter: grayscale(0.15);
+            transition: filter 0.3s;
+        }
+
+        .oeuvre img:hover {
+            filter: grayscale(0);
+        }
+
+        .oeuvre figcaption {
+            font-family: var(--sans);
+            font-size: 11px;
+            color: var(--light);
+            margin-top: 8px;
+            letter-spacing: 0.01em;
+            line-height: 1.5;
+        }
+
+        .oeuvre figcaption a {
+            color: var(--light);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .oeuvre figcaption a:hover {
+            color: var(--dark);
+        }
+
+        @media (max-width: 640px) {
+            .oeuvres-row {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .oeuvre img {
+                height: 140px;
+            }
+        }
+
+        .backprop-container {
+            max-width: 560px;
+            margin: 0 auto 56px;
+            text-align: center;
+        }
+        #backprop-canvas, #blockchain-canvas {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        p.backprop-legend {
+            font-family: var(--sans) !important;
+            font-size: 11px !important;
+            color: var(--light) !important;
+            letter-spacing: 0.02em;
+            margin-top: 4px;
+            margin-bottom: 0;
+        }
+
         /* ── Présentation ───────────────────────────── */
         .presentation {
             padding-top: 80px;
@@ -587,7 +663,7 @@
 <section class="presentation" id="parcours">
     <p class="section-label">Parcours</p>
     <p>
-        Depuis 2017, je dirige la <a href="https://distributedgallery.com" target="_blank" rel="noopener">Distributed Gallery</a>, un collectif pionnier à l'intersection de l'art contemporain et des technologies numériques. Nos &oelig;uvres ont été exposées à <a href="https://www.artbasel.com" target="_blank" rel="noopener">Art Basel</a>, au <a href="https://www.schinkelpavillon.de/exhibition/curated-by-simon-denny-in-dialogue-with-distributed-gallery-harm-van-den-dorpel-sarah-hamerman-and-sam-hart-kei-kreutler-and-aude-launay/" target="_blank" rel="noopener">Schinkel Pavillon</a> de Berlin, à la FIAC, vendues chez <a href="https://drouot.com/fr/l/10842901?actionParam=listLot=lot=99453" target="_blank" rel="noopener">Drouot</a> et <a href="https://www.phillips.com/detail/the-distributed-gallery/UK090322/20" target="_blank" rel="noopener">Phillips London</a>, et acquises par des institutions comme le Centre Pompidou, le <a href="https://zkm.de" target="_blank" rel="noopener">ZKM</a> (Karlsruhe) ou le <a href="https://www.ooekultur.at/francisco-carolinum" target="_blank" rel="noopener">Francisco Carolinum</a> (Linz).
+        Depuis 2017, je dirige la <a href="https://distributedgallery.com" target="_blank" rel="noopener">Distributed Gallery</a>, un collectif pionnier à l'intersection de l'art contemporain et des technologies numériques. Nos &oelig;uvres ont été exposées à <a href="https://www.artbasel.com" target="_blank" rel="noopener">Art Basel</a>, au <a href="https://www.schinkelpavillon.de/exhibition/curated-by-simon-denny-in-dialogue-with-distributed-gallery-harm-van-den-dorpel-sarah-hamerman-and-sam-hart-kei-kreutler-and-aude-launay/" target="_blank" rel="noopener">Schinkel Pavillon</a> de Berlin, à la FIAC, vendues chez <a href="https://drouot.com/fr/l/10842901?actionParam=listLot=lot=99453" target="_blank" rel="noopener">Drouot</a> et <a href="https://www.phillips.com/detail/the-distributed-gallery/UK090322/20" target="_blank" rel="noopener">Phillips London</a>, et acquises par des institutions comme le <a href="https://zkm.de" target="_blank" rel="noopener">ZKM</a> (Karlsruhe), le <a href="https://www.ooekultur.at/francisco-carolinum" target="_blank" rel="noopener">Francisco Carolinum</a> (Linz) ou le Centre Pompidou.
     </p>
     <p>
         J'ai également contribué au développement de protocoles dans l'écosystème Web3 — notamment <a href="https://blog.aragon.org/introducing-aragon-fundraising/" target="_blank" rel="noopener">Aragon Fundraising</a>, un système de bonding curve utilisé par Aavegotchi pour lever 18,5 millions de dollars, et <a href="https://medium.com/balancer-protocol/spectre-receives-grant-to-build-new-type-of-pool-on-balancer-protocol-d2f29ecb4da2" target="_blank" rel="noopener">Spectre</a>, un protocole de fractionnalisation d'&oelig;uvres numériques soutenu par <a href="https://balancer.fi/" target="_blank" rel="noopener">Balancer Labs</a>.
@@ -601,6 +677,17 @@
     <p>
         À l'intersection de ces pratiques, je propose désormais des formations en IA et en blockchain aux entreprises, écoles et institutions qui veulent comprendre et utiliser ces technologies sans en subir le storytelling.
     </p>
+
+    <div class="oeuvres-row">
+        <figure class="oeuvre">
+            <img src="_MG_0112.jpg" alt="Chaos Machine, Distributed Gallery, 2018" />
+            <figcaption><a href="https://www.phillips.com/detail/the-distributed-gallery/171229" target="_blank" rel="noopener"><em>Chaos Machine</em>, 2018 — vendue chez Phillips London, 2021</a></figcaption>
+        </figure>
+        <figure class="oeuvre">
+            <img src="BREATHINGMoon.png" alt="Breathing of the Moon, avec Anna Ridler" />
+            <figcaption><a href="https://www.breathings-of-the-moon.art/" target="_blank" rel="noopener"><em>Breathing of the Moon</em>, avec Anna Ridler — acquise par le Centre Pompidou</a></figcaption>
+        </figure>
+    </div>
 </section>
 
 <div class="divider"><hr /></div>
@@ -614,16 +701,15 @@
         <a href="https://www.liberation.fr/culture/arts/le-monde-de-lart-face-aux-nft-je-suis-a-peine-capable-dutiliser-un-telephone-mais-je-sais-coder-un-algorithme-20220331_YZ5CKCNXVFE5ZAYP3LWBKF4MTQ/" target="_blank" rel="noopener"><span>Libération</span></a>
         <a href="https://www.radiofrance.fr/franceculture/podcasts/les-pieds-sur-terre/la-fabrique-du-fake-9771509" target="_blank" rel="noopener"><span>France Culture</span></a>
         <a href="https://www.beauxarts.com/grand-format/la-crypto-monnaie-valeur-montante-de-lart-contemporain/" target="_blank" rel="noopener"><span>Beaux Arts Magazine</span></a>
-        <a href="https://auposte.media/emissions/zapper-bollore-on-crie-pas-avant-d-avoir-mal-on-prend-juste-un-tout-petit-peu-d-avance" target="_blank" rel="noopener"><span>Au Poste</span></a>
         <a href="https://www.rightclicksave.com/article/the-aesthetic-of-a-protocol" target="_blank" rel="noopener"><span>Right Click Save</span></a>
         <a href="https://www.moussemagazine.it/magazine/proof-work-schinkel-pavillon-berlin/" target="_blank" rel="noopener"><span>Mousse Magazine</span></a>
-        <a href="https://neural.it/issues/neural-60-blockchain-the-trust-catalyst/" target="_blank" rel="noopener"><span>Neural Magazine</span></a>
+        <span>Neural Magazine</span>
         <a href="https://www.neroeditions.com/comrade-artist-we-have-a-problem/" target="_blank" rel="noopener"><span>Nero Editions</span></a>
         <a href="https://www.phillips.com/detail/the-distributed-gallery/UK090322/20" target="_blank" rel="noopener"><span>Phillips</span></a>
         <a href="https://www.schinkelpavillon.de/exhibition/curated-by-simon-denny-in-dialogue-with-distributed-gallery-harm-van-den-dorpel-sarah-hamerman-and-sam-hart-kei-kreutler-and-aude-launay/" target="_blank" rel="noopener"><span>Schinkel Pavillon</span></a>
         <a href="https://artviewer.org/proof-of-work-at-schinkel-pavillon/" target="_blank" rel="noopener"><span>Art Viewer</span></a>
         <a href="https://nguyenwahed.com/news/9-interview-smart-contract-as-a-medium-in-conversation-with-rhea-myers-distributed-gallery-alexandre/" target="_blank" rel="noopener"><span>Nguyen Wahed</span></a>
-        <a href="https://lundi.am/Quelques-reflexions-sur-la-desertion-du-monde-technique" target="_blank" rel="noopener"><span>lundimatin</span></a>
+
         <a href="https://www.artnome.com/news/2018/1/6/interview-with-the-man-behind-the-richard-prince-ready-made-token" target="_blank" rel="noopener"><span>Artnome</span></a>
         <a href="https://verse.works/journal/protocol-art-and-museum-acquisitions" target="_blank" rel="noopener"><span>Verse</span></a>
         <a href="https://curamagazine.com/digital/simon-denny-art-and-crypto/" target="_blank" rel="noopener"><span>CURA.</span></a>
@@ -647,10 +733,111 @@
         Formations conçues sur mesure. Plusieurs formats pour répondre à des besoins différents : acculturer une équipe en deux heures, faire monter un groupe en autonomie sur une journée, ou aller plus loin sur deux jours.
     </p>
 
+    <!-- Animation nuage de nombres -->
+    <div class="backprop-container" style="margin: 40px auto; max-width: 480px;">
+        <canvas id="numbers-canvas" width="480" height="160"></canvas>
+        <p class="backprop-legend">Si on pouvait regarder à l'intérieur d'un modèle de langage, on ne verrait que des nombres qui s'entrechoquent.</p>
+    </div>
+    <script>
+    (function() {
+        const canvas = document.getElementById('numbers-canvas');
+        const ctx = canvas.getContext('2d');
+        const W = 480, H = 160;
+        const count = 55;
+
+        const particles = [];
+        for (let i = 0; i < count; i++) {
+            const isFloat = Math.random() > 0.4;
+            let val;
+            if (isFloat) {
+                val = (Math.random() * 2 - 1).toFixed(Math.random() > 0.5 ? 2 : 3);
+            } else {
+                val = Math.floor(Math.random() * 200 - 100).toString();
+            }
+            particles.push({
+                x: Math.random() * (W - 40) + 20,
+                y: Math.random() * (H - 30) + 15,
+                vx: (Math.random() - 0.5) * 3,
+                vy: (Math.random() - 0.5) * 3,
+                val: val,
+                size: 9 + Math.random() * 5,
+                alpha: 0.2 + Math.random() * 0.35,
+                flash: 0,
+            });
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, W, H);
+
+            // update positions
+            for (const p of particles) {
+                p.x += p.vx;
+                p.y += p.vy;
+
+                // bounce off walls
+                if (p.x < 15 || p.x > W - 15) { p.vx *= -1; p.x = Math.max(15, Math.min(W - 15, p.x)); }
+                if (p.y < 10 || p.y > H - 10) { p.vy *= -1; p.y = Math.max(10, Math.min(H - 10, p.y)); }
+
+                if (p.flash > 0) p.flash -= 0.03;
+            }
+
+            // check collisions
+            for (let i = 0; i < count; i++) {
+                for (let j = i + 1; j < count; j++) {
+                    const a = particles[i], b = particles[j];
+                    const dx = b.x - a.x, dy = b.y - a.y;
+                    const dist = Math.sqrt(dx*dx + dy*dy);
+                    if (dist < 28) {
+                        // swap velocities
+                        const tvx = a.vx; const tvy = a.vy;
+                        a.vx = b.vx; a.vy = b.vy;
+                        b.vx = tvx; b.vy = tvy;
+
+                        // push apart
+                        const overlap = (28 - dist) / 2;
+                        const nx = dx / dist, ny = dy / dist;
+                        a.x -= nx * overlap;
+                        a.y -= ny * overlap;
+                        b.x += nx * overlap;
+                        b.y += ny * overlap;
+
+                        // flash on collision
+                        a.flash = 1;
+                        b.flash = 1;
+
+                        // change value on collision
+                        const isFloat = Math.random() > 0.4;
+                        if (isFloat) {
+                            a.val = (Math.random() * 2 - 1).toFixed(Math.random() > 0.5 ? 2 : 3);
+                        } else {
+                            a.val = Math.floor(Math.random() * 200 - 100).toString();
+                        }
+                    }
+                }
+            }
+
+            // draw particles
+            for (const p of particles) {
+                ctx.save();
+                ctx.font = `${p.size}px Inter, system-ui, sans-serif`;
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                const a = Math.min(0.9, p.alpha + p.flash * 0.6);
+                ctx.fillStyle = p.flash > 0.5 ? `rgba(30,30,30,${a})` : `rgba(60,60,60,${a})`;
+                ctx.fillText(p.val, p.x, p.y);
+                ctx.restore();
+            }
+
+            requestAnimationFrame(draw);
+        }
+        requestAnimationFrame(draw);
+    })();
+    </script>
+
     <div class="formation-card">
         <div class="card-header">
             <h3>Conférence — L'IA comme nouvelle infrastructure du savoir</h3>
-            <span class="price">à partir de 600 € HT</span>
+            <span class="price">à partir de 600 € HT · sur demande pour les universités</span>
         </div>
         <div class="meta">
             <span>1h30 à 2h</span>
@@ -660,6 +847,113 @@
             Une conférence pour comprendre ce que sont réellement les grands modèles de langage, comment ils fonctionnent, ce qu'ils permettent — et ce qu'ils ne comprennent pas. L'intervention propose un grand tour d'horizon de l'IA générative contemporaine : RAG, agents, MCP, automatisations, API, fine-tuning, alignement, modèles open source, recherche augmentée et multimodalité. L'objectif est de comprendre ce que recouvrent aujourd'hui les technologies d'IA générative, comment en tirer le meilleur parti, et comment poursuivre ensuite ses propres recherches avec des repères solides — sans perdre de vue leurs limites techniques, économiques et politiques.
         </p>
     </div>
+
+    <!-- Animation tokenisation -->
+    <div class="backprop-container" style="margin: 40px auto; max-width: 620px;">
+        <div id="token-anim" style="position:relative; height: 100px; overflow:hidden;"></div>
+        <p class="backprop-legend">Tokenisation : découpage d'une phrase en tokens, les unités traitées par le modèle.</p>
+    </div>
+    <style>
+        .token-word {
+            display: inline-block;
+            font-family: var(--sans);
+            font-size: 13px;
+            color: rgba(60,60,60,0.9);
+            padding: 4px 0;
+            transition: all 0.6s ease;
+            position: relative;
+        }
+        .token-word .tok {
+            display: inline-block;
+            padding: 3px 5px;
+            border: 1px solid transparent;
+            border-radius: 2px;
+            transition: all 0.8s ease;
+            margin: 0 1px;
+        }
+        .token-anim-line {
+            white-space: nowrap;
+            text-align: center;
+            position: absolute;
+            width: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .token-anim-active .tok {
+            border-color: rgba(160,160,160,0.5);
+            background: rgba(160,160,160,0.06);
+        }
+        .token-anim-active .tok:nth-child(odd) {
+            background: rgba(140,140,140,0.1);
+        }
+        .token-anim-split .tok {
+            border-color: rgba(120,120,120,0.4);
+            background: rgba(140,140,140,0.08);
+            margin: 0 2px;
+            position: relative;
+        }
+        .token-anim-split .tok:nth-child(odd) {
+            background: rgba(120,120,120,0.13);
+        }
+        .tok-id {
+            display: block;
+            font-family: var(--sans);
+            font-size: 9px;
+            color: rgba(140,140,140,0.7);
+            text-align: center;
+            margin-top: 1px;
+            letter-spacing: 0;
+        }
+    </style>
+    <script>
+    (function() {
+        const container = document.getElementById('token-anim');
+        const phrases = [
+            { text: "Le modèle transforme le langage en calcul", tokens: ["Le", " mod", "èle", " transform", "e", " le", " lang", "age", " en", " calc", "ul"], ids: [1354, 1713, 8226, 5068, 68, 514, 1476, 1018, 665, 2082, 365] },
+            { text: "Comment fonctionne un réseau de neurones", tokens: ["Comment", " fonctionne", " un", " rés", "eau", " de", " neur", "ones"], ids: [13068, 48018, 653, 1005, 26983, 451, 26174, 2651] },
+            { text: "Les données entraînent le modèle", tokens: ["Les", " donn", "ées", " entra", "în", "ent", " le", " mod", "èle"], ids: [5765, 27261, 4946, 3553, 18022, 306, 514, 1713, 8226] },
+        ];
+        let phraseIdx = 0;
+
+        function showPhrase() {
+            const p = phrases[phraseIdx % phrases.length];
+            phraseIdx++;
+
+            const line = document.createElement('div');
+            line.className = 'token-anim-line';
+
+            // Phase 1: show full text
+            const wordSpan = document.createElement('span');
+            wordSpan.className = 'token-word';
+            wordSpan.innerHTML = `<span class="tok">${p.text}</span>`;
+            line.appendChild(wordSpan);
+            container.innerHTML = '';
+            container.appendChild(line);
+
+            // Phase 2: highlight as single block
+            setTimeout(() => {
+                line.classList.add('token-anim-active');
+            }, 600);
+
+            // Phase 3: split into tokens
+            setTimeout(() => {
+                wordSpan.innerHTML = p.tokens.map((t, i) =>
+                    `<span class="tok">${t.replace(/ /g, ' ')}<span class="tok-id">${p.ids[i]}</span></span>`
+                ).join('');
+                line.classList.remove('token-anim-active');
+                line.classList.add('token-anim-split');
+            }, 2000);
+
+            // Phase 4: fade out and restart
+            setTimeout(() => {
+                wordSpan.style.opacity = '0';
+                setTimeout(showPhrase, 800);
+            }, 5000);
+        }
+
+        showPhrase();
+    })();
+    </script>
 
     <div class="formation-card">
         <div class="card-header">
@@ -682,6 +976,184 @@
         </p>
     </div>
 
+    <!-- Animation rétropropagation -->
+    <div class="backprop-container">
+        <canvas id="backprop-canvas" width="800" height="220"></canvas>
+        <p class="backprop-legend">Illustration du processus d'apprentissage par rétropropagation dans un réseau de neurones</p>
+    </div>
+    <script>
+    (function() {
+        const canvas = document.getElementById('backprop-canvas');
+        const ctx = canvas.getContext('2d');
+        const W = 800, H = 220;
+
+        const layers = [
+            [{x:120,y:40},{x:120,y:110},{x:120,y:180}],
+            [{x:300,y:40},{x:300,y:110},{x:300,y:180}],
+            [{x:500,y:40},{x:500,y:110},{x:500,y:180}],
+            [{x:680,y:75},{x:680,y:145}]
+        ];
+
+        const links = [];
+        for (let l = 0; l < layers.length - 1; l++)
+            for (const a of layers[l])
+                for (const b of layers[l+1])
+                    links.push({from: a, to: b, layer: l});
+
+        const nodeRadius = 5;
+        const cycleDuration = 6000;
+        const forwardEnd = 0.45;
+        const backwardEnd = 0.85;
+
+        const nodeWeights = layers.map(layer => layer.map(() => 0.15 + Math.random() * 0.15));
+
+        function easeInOut(t) { return t < 0.5 ? 2*t*t : -1+( 4-2*t)*t; }
+
+        function draw(time) {
+            const t = (time % cycleDuration) / cycleDuration;
+            ctx.clearRect(0, 0, W, H);
+
+            // draw links
+            for (const link of links) {
+                ctx.beginPath();
+                ctx.moveTo(link.from.x, link.from.y);
+                ctx.lineTo(link.to.x, link.to.y);
+                ctx.strokeStyle = 'rgba(180,180,180,0.3)';
+                ctx.lineWidth = 0.7;
+                ctx.stroke();
+            }
+
+            // forward pass: traveling dots along links
+            if (t < forwardEnd) {
+                const ft = t / forwardEnd;
+                for (const link of links) {
+                    const layerDelay = link.layer * 0.3;
+                    const localT = (ft - layerDelay) / 0.4;
+                    if (localT > 0 && localT < 1) {
+                        const p = easeInOut(Math.min(1, Math.max(0, localT)));
+                        const px = link.from.x + (link.to.x - link.from.x) * p;
+                        const py = link.from.y + (link.to.y - link.from.y) * p;
+
+                        // trailing line
+                        const trailP = easeInOut(Math.max(0, localT - 0.3));
+                        const tx = link.from.x + (link.to.x - link.from.x) * trailP;
+                        const ty = link.from.y + (link.to.y - link.from.y) * trailP;
+                        ctx.beginPath();
+                        ctx.moveTo(tx, ty);
+                        ctx.lineTo(px, py);
+                        ctx.strokeStyle = 'rgba(60,60,60,0.5)';
+                        ctx.lineWidth = 1.5;
+                        ctx.stroke();
+
+                        // dot
+                        ctx.beginPath();
+                        ctx.arc(px, py, 2.5, 0, Math.PI * 2);
+                        ctx.fillStyle = 'rgba(40,40,40,0.7)';
+                        ctx.fill();
+                    }
+                }
+            }
+
+            // backward pass: traveling dots in reverse + dashed
+            if (t > forwardEnd && t < backwardEnd) {
+                const bt = (t - forwardEnd) / (backwardEnd - forwardEnd);
+                for (const link of links) {
+                    const layerDelay = (2 - link.layer) * 0.3;
+                    const localT = (bt - layerDelay) / 0.4;
+                    if (localT > 0 && localT < 1) {
+                        const p = easeInOut(Math.min(1, Math.max(0, localT)));
+                        const px = link.to.x + (link.from.x - link.to.x) * p;
+                        const py = link.to.y + (link.from.y - link.to.y) * p;
+
+                        // dashed trailing line
+                        const trailP = easeInOut(Math.max(0, localT - 0.3));
+                        const tx = link.to.x + (link.from.x - link.to.x) * trailP;
+                        const ty = link.to.y + (link.from.y - link.to.y) * trailP;
+                        ctx.beginPath();
+                        ctx.setLineDash([4, 4]);
+                        ctx.moveTo(tx, ty);
+                        ctx.lineTo(px, py);
+                        ctx.strokeStyle = 'rgba(120,120,120,0.5)';
+                        ctx.lineWidth = 1.2;
+                        ctx.stroke();
+                        ctx.setLineDash([]);
+
+                        // dot
+                        ctx.beginPath();
+                        ctx.arc(px, py, 2, 0, Math.PI * 2);
+                        ctx.fillStyle = 'rgba(100,100,100,0.7)';
+                        ctx.fill();
+                    }
+                }
+            }
+
+            // update weights during backward pass
+            if (t > forwardEnd && t < backwardEnd) {
+                const bt = (t - forwardEnd) / (backwardEnd - forwardEnd);
+                for (let l = layers.length - 1; l >= 0; l--) {
+                    const layerBt = (bt - (layers.length - 1 - l) * 0.2);
+                    if (layerBt > 0) {
+                        for (let n = 0; n < layers[l].length; n++) {
+                            const target = 0.5 + (n * 0.1);
+                            nodeWeights[l][n] += (target - nodeWeights[l][n]) * 0.02;
+                        }
+                    }
+                }
+            }
+
+            // reset weights at end of cycle
+            if (t > backwardEnd + 0.1 && t < backwardEnd + 0.12) {
+                for (let l = 0; l < layers.length; l++)
+                    for (let n = 0; n < layers[l].length; n++)
+                        nodeWeights[l][n] = 0.15 + Math.random() * 0.15;
+            }
+
+            // draw nodes
+            for (let l = 0; l < layers.length; l++) {
+                for (let n = 0; n < layers[l].length; n++) {
+                    const node = layers[l][n];
+                    const w = nodeWeights[l][n];
+                    const fillAlpha = Math.min(0.6, w);
+
+                    // node glow during backward update
+                    let glowing = false;
+                    if (t > forwardEnd && t < backwardEnd) {
+                        const bt = (t - forwardEnd) / (backwardEnd - forwardEnd);
+                        const layerBt = bt - (layers.length - 1 - l) * 0.25;
+                        if (layerBt > 0 && layerBt < 0.5) glowing = true;
+                    }
+
+                    if (glowing) {
+                        ctx.beginPath();
+                        ctx.arc(node.x, node.y, nodeRadius + 4, 0, Math.PI * 2);
+                        ctx.fillStyle = 'rgba(100,100,100,0.08)';
+                        ctx.fill();
+                    }
+
+                    ctx.beginPath();
+                    ctx.arc(node.x, node.y, nodeRadius, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(60,60,60,${fillAlpha})`;
+                    ctx.fill();
+                    ctx.strokeStyle = glowing ? 'rgba(40,40,40,0.9)' : 'rgba(80,80,80,0.6)';
+                    ctx.lineWidth = glowing ? 1.8 : 1.2;
+                    ctx.stroke();
+
+                    // weight value above node
+                    ctx.save();
+                    ctx.font = '9px Inter, system-ui, sans-serif';
+                    ctx.textAlign = 'center';
+                    ctx.fillStyle = glowing ? 'rgba(60,60,60,0.7)' : 'rgba(140,140,140,0.55)';
+                    ctx.fillText(w.toFixed(2), node.x, node.y - 12);
+                    ctx.restore();
+                }
+            }
+
+            requestAnimationFrame(draw);
+        }
+        requestAnimationFrame(draw);
+    })();
+    </script>
+
     <div class="formation-card">
         <div class="card-header">
             <h3>Atelier avancé — Concevoir et prototyper avec l'IA</h3>
@@ -702,6 +1174,156 @@
         </p>
     </div>
 
+    <!-- Animation similarité cosinus -->
+    <div class="backprop-container" style="margin: 40px auto; max-width: 480px;">
+        <canvas id="cosine-canvas" width="480" height="220"></canvas>
+        <p class="backprop-legend">Le modèle mesure la ressemblance entre deux mots par l'angle entre leurs vecteurs.</p>
+    </div>
+    <script>
+    (function() {
+        const canvas = document.getElementById('cosine-canvas');
+        const ctx = canvas.getContext('2d');
+        const W = 480, H = 220;
+
+        const pairs = [
+            { a: "chat", b: "chien", score: 0.92, angleTarget: 0.28 },
+            { a: "roi", b: "reine", score: 0.87, angleTarget: 0.38 },
+            { a: "chat", b: "économie", score: 0.12, angleTarget: 1.35 },
+            { a: "Paris", b: "France", score: 0.81, angleTarget: 0.48 },
+            { a: "soleil", b: "politique", score: 0.08, angleTarget: 1.45 },
+            { a: "écrire", b: "rédiger", score: 0.94, angleTarget: 0.22 },
+        ];
+
+        let pairIdx = 0;
+        let currentAngle = 0.28;
+        let targetAngle = 0.28;
+        let currentScore = 0.92;
+        let targetScore = 0.92;
+        let phaseTimer = 0;
+        const phaseDuration = 180; // frames per pair
+        const transitionFrames = 60;
+        let labelAlpha = 1;
+
+        const origin = { x: 100, y: H - 45 };
+        const arrowLen = 160;
+
+        function easeInOut(t) {
+            return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, W, H);
+            phaseTimer++;
+
+            const pair = pairs[pairIdx % pairs.length];
+
+            // transition logic
+            if (phaseTimer <= transitionFrames) {
+                const t = easeInOut(phaseTimer / transitionFrames);
+                currentAngle = currentAngle + (targetAngle - currentAngle) * t;
+                currentScore = currentScore + (targetScore - currentScore) * t;
+                labelAlpha = Math.min(1, phaseTimer / 30);
+            }
+
+            if (phaseTimer >= phaseDuration) {
+                phaseTimer = 0;
+                const prevAngle = currentAngle;
+                const prevScore = currentScore;
+                pairIdx++;
+                const next = pairs[pairIdx % pairs.length];
+                currentAngle = prevAngle;
+                currentScore = prevScore;
+                targetAngle = next.angleTarget;
+                targetScore = next.score;
+                labelAlpha = 0;
+            }
+
+            // fixed arrow (horizontal)
+            const ax = origin.x + arrowLen;
+            const ay = origin.y;
+
+            // rotating arrow
+            const bx = origin.x + Math.cos(-currentAngle) * arrowLen;
+            const by = origin.y + Math.sin(-currentAngle) * arrowLen;
+
+            // draw angle arc
+            ctx.beginPath();
+            ctx.arc(origin.x, origin.y, 40, -currentAngle, 0, false);
+            ctx.strokeStyle = 'rgba(160,160,160,0.3)';
+            ctx.lineWidth = 1;
+            ctx.stroke();
+
+            // fill angle area lightly
+            ctx.beginPath();
+            ctx.moveTo(origin.x, origin.y);
+            ctx.arc(origin.x, origin.y, 40, -currentAngle, 0, false);
+            ctx.closePath();
+            ctx.fillStyle = `rgba(160,160,160,${0.04 + (1 - currentScore) * 0.08})`;
+            ctx.fill();
+
+            // draw arrows
+            drawArrow(origin.x, origin.y, ax, ay, 'rgba(80,80,80,0.6)');
+            drawArrow(origin.x, origin.y, bx, by, 'rgba(80,80,80,0.6)');
+
+            // word labels
+            const alpha = labelAlpha.toFixed(2);
+            ctx.font = '14px Inter, system-ui, sans-serif';
+            ctx.textBaseline = 'middle';
+
+            // word A (end of horizontal arrow)
+            ctx.textAlign = 'left';
+            ctx.fillStyle = `rgba(50,50,50,${alpha})`;
+            ctx.fillText(pair.a, ax + 10, ay);
+
+            // word B (end of rotating arrow)
+            ctx.fillText(pair.b, bx + 10, by - 4);
+
+            // score display
+            const scoreX = origin.x + Math.cos(-currentAngle / 2) * 70;
+            const scoreY = origin.y + Math.sin(-currentAngle / 2) * 70;
+            ctx.textAlign = 'center';
+            ctx.font = '13px Inter, system-ui, sans-serif';
+            ctx.fillStyle = `rgba(100,100,100,${alpha})`;
+            ctx.fillText(currentScore.toFixed(2), scoreX, scoreY);
+
+            // "similarité" label
+            ctx.font = '10px Inter, system-ui, sans-serif';
+            ctx.fillStyle = `rgba(140,140,140,${alpha * 0.7})`;
+            ctx.fillText('similarité', scoreX, scoreY + 16);
+
+            requestAnimationFrame(draw);
+        }
+
+        function drawArrow(x1, y1, x2, y2, color) {
+            const headLen = 8;
+            const angle = Math.atan2(y2 - y1, x2 - x1);
+
+            ctx.beginPath();
+            ctx.moveTo(x1, y1);
+            ctx.lineTo(x2, y2);
+            ctx.strokeStyle = color;
+            ctx.lineWidth = 1.5;
+            ctx.stroke();
+
+            // arrowhead
+            ctx.beginPath();
+            ctx.moveTo(x2, y2);
+            ctx.lineTo(x2 - headLen * Math.cos(angle - 0.4), y2 - headLen * Math.sin(angle - 0.4));
+            ctx.moveTo(x2, y2);
+            ctx.lineTo(x2 - headLen * Math.cos(angle + 0.4), y2 - headLen * Math.sin(angle + 0.4));
+            ctx.stroke();
+
+            // small circle at origin
+            ctx.beginPath();
+            ctx.arc(x1, y1, 3, 0, Math.PI * 2);
+            ctx.fillStyle = color;
+            ctx.fill();
+        }
+
+        requestAnimationFrame(draw);
+    })();
+    </script>
+
     <div class="formation-card">
         <div class="card-header">
             <h3>Blockchain — Comprendre et démystifier</h3>
@@ -721,7 +1343,153 @@
         <p>
             Cette formation est proposée par quelqu'un qui pratique ces technologies depuis 2017, et non par quelqu'un qui les observe de loin. J'ai exposé avec l'<a href="https://ethereum.org/foundation/" target="_blank" rel="noopener">Ethereum Foundation</a> et travaillé avec des acteurs majeurs comme <a href="https://aragon.org/" target="_blank" rel="noopener">Aragon</a> ou <a href="https://balancer.fi/" target="_blank" rel="noopener">Balancer</a>. L'approche mêle donc compréhension technique, expérience de terrain et lecture critique des imaginaires Web3.
         </p>
+        <!-- Animation blockchain -->
+        <div class="backprop-container" style="margin-top: 32px;">
+            <canvas id="blockchain-canvas" width="800" height="160"></canvas>
+            <p class="backprop-legend">Illustration d'une blockchain : une chaîne de blocs contenant des transactions, reliés entre eux</p>
+        </div>
     </div>
+    <script>
+    (function() {
+        const canvas = document.getElementById('blockchain-canvas');
+        const ctx = canvas.getContext('2d');
+        const W = 800, H = 160;
+        const blockS = 28;
+        const gap = 44;
+        const totalBlocks = 7;
+        const cycleDuration = 10000;
+        const restY = H * 0.55;
+        const dropStartY = -10;
+        const bounceHeight = 16;
+
+        function easeOutBounce(t) {
+            if (t < 1/2.75) return 7.5625*t*t;
+            if (t < 2/2.75) return 7.5625*(t-=1.5/2.75)*t+0.75;
+            if (t < 2.5/2.75) return 7.5625*(t-=2.25/2.75)*t+0.9375;
+            return 7.5625*(t-=2.625/2.75)*t+0.984375;
+        }
+
+        function chainStartX(n) {
+            const totalW = n * blockS + (n - 1) * gap;
+            return (W - totalW) / 2;
+        }
+
+        function blockX(index, total) {
+            return chainStartX(total) + index * (blockS + gap);
+        }
+
+        function draw(time) {
+            const t = (time % cycleDuration) / cycleDuration;
+            ctx.clearRect(0, 0, W, H);
+
+            const baseBlocks = 3;
+            const dropDuration = 0.1;
+            const linkFadeDuration = 0.04;
+            const blockInterval = 0.12;
+            const startPhase = 0.05;
+
+            let visibleCount = baseBlocks;
+            for (let i = 0; i < totalBlocks - baseBlocks; i++) {
+                const dropStart = startPhase + i * blockInterval;
+                if (t > dropStart) visibleCount = baseBlocks + i + 1;
+            }
+            visibleCount = Math.min(visibleCount, totalBlocks);
+
+            for (let i = 0; i < visibleCount; i++) {
+                const bx = blockX(i, visibleCount);
+                let by = restY;
+                let alpha = 1;
+
+                if (i >= baseBlocks) {
+                    const dropIndex = i - baseBlocks;
+                    const dropStart = startPhase + dropIndex * blockInterval;
+                    const dropT = Math.max(0, Math.min(1, (t - dropStart) / dropDuration));
+
+                    if (dropT < 1) {
+                        const bounced = easeOutBounce(dropT);
+                        by = dropStartY + (restY - dropStartY) * bounced;
+                        alpha = 0.3 + 0.7 * dropT;
+                    }
+                }
+
+                // block square (same style as backprop nodes)
+                ctx.save();
+                ctx.globalAlpha = alpha;
+                ctx.strokeStyle = 'rgba(80,80,80,0.6)';
+                ctx.lineWidth = 1.2;
+                ctx.fillStyle = `rgba(60,60,60,${0.06 + (i / totalBlocks) * 0.08})`;
+                ctx.beginPath();
+                ctx.rect(bx, by, blockS, blockS);
+                ctx.fill();
+                ctx.stroke();
+
+                // tiny hash lines inside (like data)
+                ctx.strokeStyle = 'rgba(130,130,130,0.3)';
+                ctx.lineWidth = 0.7;
+                for (let l = 0; l < 2; l++) {
+                    const ly = by + 9 + l * 8;
+                    const lw = 8 + ((i + l) % 3) * 5;
+                    ctx.beginPath();
+                    ctx.moveTo(bx + 5, ly);
+                    ctx.lineTo(bx + 5 + lw, ly);
+                    ctx.stroke();
+                }
+                ctx.restore();
+
+                // dashed arrow to next block
+                if (i < visibleCount - 1) {
+                    const nextBx = blockX(i + 1, visibleCount);
+                    let linkAlpha = 1;
+
+                    if (i + 1 >= baseBlocks) {
+                        const dropIndex = i + 1 - baseBlocks;
+                        const dropStart = startPhase + dropIndex * blockInterval;
+                        const linkStart = dropStart + dropDuration * 0.6;
+                        linkAlpha = Math.max(0, Math.min(1, (t - linkStart) / linkFadeDuration));
+                    }
+
+                    if (linkAlpha > 0) {
+                        ctx.save();
+                        ctx.globalAlpha = linkAlpha * 0.5;
+                        const cy = restY + blockS / 2;
+                        const startLinkX = bx + blockS + 4;
+                        const endLinkX = nextBx - 4;
+
+                        // dashed line
+                        ctx.setLineDash([4, 3]);
+                        ctx.strokeStyle = 'rgba(80,80,80,0.6)';
+                        ctx.lineWidth = 1;
+                        ctx.beginPath();
+                        ctx.moveTo(startLinkX, cy);
+                        ctx.lineTo(endLinkX, cy);
+                        ctx.stroke();
+                        ctx.setLineDash([]);
+
+                        // arrow head
+                        ctx.beginPath();
+                        ctx.moveTo(endLinkX - 5, cy - 3.5);
+                        ctx.lineTo(endLinkX, cy);
+                        ctx.lineTo(endLinkX - 5, cy + 3.5);
+                        ctx.strokeStyle = 'rgba(80,80,80,0.6)';
+                        ctx.lineWidth = 1;
+                        ctx.stroke();
+
+                        // small dot (hash reference)
+                        ctx.beginPath();
+                        ctx.arc(startLinkX + (endLinkX - startLinkX) * 0.35, cy, 1.5, 0, Math.PI * 2);
+                        ctx.fillStyle = 'rgba(80,80,80,0.4)';
+                        ctx.fill();
+
+                        ctx.restore();
+                    }
+                }
+            }
+
+            requestAnimationFrame(draw);
+        }
+        requestAnimationFrame(draw);
+    })();
+    </script>
 
     <div class="sur-mesure">
         <p>
@@ -762,7 +1530,7 @@
             <li><span class="year">2022</span>Phillips London — <em>Ex-Machina: A History of Generative Art</em></li>
             <li><span class="year">2022</span>Musée Pierre Cardin, Paris</li>
             <li><span class="year">2019</span>FIAC, Paris — vente chez Drouot</li>
-            <li><span class="year">2018</span>Kate Vass Galerie, Zurich — aux côtés d'Ai WeiWei & Kevin Abosh</li>
+            <li><span class="year">2018</span>Kate Vass Galerie, Zurich — avec Ai WeiWei & Kevin Abosh</li>
             <li><span class="year">2018</span>Schinkel Pavillon, Berlin — <em>Proof of Work</em>, commissariat Simon Denny</li>
         </ul>
     </div>
@@ -770,9 +1538,9 @@
     <div class="conferences">
         <p class="section-label">Conférences</p>
         <ul class="expo-list">
-            <li><span class="year">2019</span>Maison des Sciences Économiques, Paris</li>
+            <li><span class="year">2019</span>Maison des Sciences Économiques, Paris — <em>Blockchain and the Commons</em></li>
             <li><span class="year">2018</span>Gaîté Lyrique, Paris — <em>Code is Law</em></li>
-            <li><span class="year">2018</span>Blockchain Agora, Paris</li>
+            <li><span class="year">2018</span>Blockchain Agora, Paris — <em>Understanding Protocol Art</em></li>
         </ul>
     </div>
 </section>

@@ -10,7 +10,7 @@
         "@context": "https://schema.org",
         "@type": "ProfessionalService",
         "name": "Alexandre Rouxel — Formations IA & Blockchain",
-        "description": "Formations en intelligence artificielle et blockchain pour entreprises, écoles et institutions. Conférences, ateliers pratiques et formations avancées par un praticien et enseignant depuis 2017.",
+        "description": "Formations en intelligence artificielle et blockchain pour entreprises, écoles et institutions. Masterclass, ateliers pratiques et formations avancées par un praticien et enseignant depuis 2017.",
         "url": "https://alexandrerouxel.com",
         "email": "arouxel@protonmail.com",
         "founder": {
@@ -32,8 +32,8 @@
             "itemListElement": [
                 {
                     "@type": "Offer",
-                    "name": "Conférence — L'IA comme nouvelle infrastructure du savoir",
-                    "description": "Conférence de 1h30 à 2h pour comprendre les grands modèles de langage, l'IA générative, RAG, agents, MCP, fine-tuning, alignement et multimodalité.",
+                    "name": "Masterclass — L'IA comme nouvelle infrastructure du savoir",
+                    "description": "Masterclass de 1h30 à 2h pour comprendre les grands modèles de langage, l'IA générative, RAG, agents, MCP, fine-tuning, alignement et multimodalité.",
                     "price": "600",
                     "priceCurrency": "EUR",
                     "priceSpecification": {
@@ -145,7 +145,7 @@
             z-index: 100;
             padding: 20px 40px;
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-end;
             align-items: center;
             background: rgba(250, 249, 247, 0.92);
             backdrop-filter: blur(12px);
@@ -203,8 +203,18 @@
             font-weight: 400;
             line-height: 1.18;
             color: var(--black);
-            margin-bottom: 32px;
+            margin-bottom: 16px;
             letter-spacing: -0.01em;
+        }
+
+        .hero-name {
+            font-family: var(--sans);
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--light);
+            margin-bottom: 28px;
         }
 
         .hero .subtitle {
@@ -539,7 +549,8 @@
             font-size: 13px;
             color: var(--light);
             letter-spacing: 0.02em;
-            white-space: nowrap;
+            display: block;
+            margin-bottom: 16px;
         }
 
         .formation-card .meta {
@@ -573,6 +584,47 @@
         .formation-card p a:hover {
             color: var(--dark);
             border-color: var(--dark);
+        }
+
+        .formation-card details {
+            margin-top: 4px;
+        }
+
+        .formation-card details summary {
+            font-family: var(--sans);
+            font-size: 12px;
+            font-weight: 400;
+            letter-spacing: 0.04em;
+            color: var(--light);
+            cursor: pointer;
+            list-style: none;
+            transition: color 0.2s;
+            padding: 4px 0;
+        }
+
+        .formation-card details summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .formation-card details summary::after {
+            content: ' ↓';
+            font-size: 11px;
+        }
+
+        .formation-card details[open] summary::after {
+            content: ' ↑';
+        }
+
+        .formation-card details summary:hover {
+            color: var(--dark);
+        }
+
+        .formation-card details .desc-content {
+            padding-top: 12px;
+        }
+
+        .formation-card details .desc-content p:first-child {
+            margin-top: 0;
         }
 
         /* ── Sur mesure ─────────────────────────────── */
@@ -856,7 +908,6 @@
 
 <!-- ── Nav ──────────────────────────────────────────── -->
 <nav>
-    <a href="#" class="name">Alexandre Rouxel</a>
     <div class="links">
         <a href="#formations">Formations</a>
         <a href="#parcours">Parcours</a>
@@ -868,6 +919,7 @@
 <!-- ── Hero ─────────────────────────────────────────── -->
 <section class="hero">
     <h1>Former à l'IA<br>et à la blockchain.</h1>
+    <p class="hero-name">Alexandre Rouxel</p>
     <p class="subtitle">
         Directeur artistique, enseignant, concepteur et développeur de protocoles blockchain &amp; IA. Je forme les entreprises, écoles et institutions à l'intelligence artificielle et aux technologies décentralisées.
     </p>
@@ -1056,16 +1108,21 @@
 
     <div class="formation-card">
         <div class="card-header">
-            <h3>Conférence — L'IA comme nouvelle infrastructure du savoir</h3>
-            <span class="price">à partir de 600 € HT · sur demande pour les universités</span>
+            <h3>Masterclass — L'IA comme nouvelle infrastructure du savoir</h3>
         </div>
         <div class="meta">
             <span>1h30 à 2h</span>
             <span>Écoles, institutions, entreprises, organisations culturelles</span>
         </div>
-        <p>
-            Une conférence pour comprendre ce que sont réellement les grands modèles de langage, comment ils fonctionnent, ce qu'ils permettent — et ce qu'ils ne comprennent pas. L'intervention propose un grand tour d'horizon de l'IA générative contemporaine : RAG, agents, MCP, automatisations, API, fine-tuning, alignement, modèles open source, recherche augmentée et multimodalité. L'objectif est de comprendre ce que recouvrent aujourd'hui les technologies d'IA générative, comment en tirer le meilleur parti, et comment poursuivre ensuite ses propres recherches avec des repères solides — sans perdre de vue leurs limites techniques, économiques et politiques.
-        </p>
+        <span class="price">à partir de 600 € HT · sur demande pour les universités</span>
+        <details>
+            <summary>Lire le descriptif</summary>
+            <div class="desc-content">
+                <p>
+                    Une conférence pour comprendre ce que sont réellement les grands modèles de langage, comment ils fonctionnent, ce qu'ils permettent — et ce qu'ils ne comprennent pas. L'intervention propose un grand tour d'horizon de l'IA générative contemporaine : RAG, agents, MCP, automatisations, API, fine-tuning, alignement, modèles open source, recherche augmentée et multimodalité. L'objectif est de comprendre ce que recouvrent aujourd'hui les technologies d'IA générative, comment en tirer le meilleur parti, et comment poursuivre ensuite ses propres recherches avec des repères solides — sans perdre de vue leurs limites techniques, économiques et politiques.
+                </p>
+            </div>
+        </details>
     </div>
 
     <!-- Animation tokenisation -->
@@ -1178,22 +1235,27 @@
     <div class="formation-card">
         <div class="card-header">
             <h3>Atelier — Travailler avec l'IA : outils, méthodes et bonnes pratiques</h3>
-            <span class="price">à partir de 1 200 € HT</span>
         </div>
         <div class="meta">
             <span>1 journée</span>
             <span>6 à 15 personnes</span>
             <span>Organisations, institutions, écoles, lieux culturels</span>
         </div>
-        <p>
-            Cet atelier s'adresse à celles et ceux qui veulent aller au-delà d'un usage ponctuel des outils d'IA générative. Il propose, sur une journée, de découvrir les méthodes, les usages avancés et les bons réflexes qui permettent de travailler avec l'IA générative de manière plus précise, plus critique et plus efficace — que ce soit pour chercher, écrire, analyser, produire ou transformer des contenus.
-        </p>
-        <p>
-            L'atelier s'appuie sur une approche concrète des modèles de langage : comment construire un bon contexte, orienter un modèle sans le rigidifier, travailler avec des documents, stabiliser un ton, une méthode ou un rôle, repérer les réponses inventées, et transformer une interaction vague en production exploitable. À partir de cas pratiques — assistants spécialisés, analyse de corpus, écriture augmentée, recherche documentaire, préparation de contenus — les participants apprennent à concevoir des usages situés de l'IA, plutôt qu'à simplement accumuler des "prompts".
-        </p>
-        <p>
-            Au-delà de la prise en main, l'atelier propose une compréhension architecturale des grands modèles de langage : leur fonctionnement, leurs limites, leurs conditions d'usage et les manières de les intégrer dans des pratiques concrètes. Il accompagne les participants dans l'analyse et la maîtrise des outils, des méthodes et des bonnes pratiques nécessaires pour utiliser l'IA générative avec efficacité, discernement et autonomie.
-        </p>
+        <span class="price">à partir de 1 200 € HT</span>
+        <details>
+            <summary>Lire le descriptif</summary>
+            <div class="desc-content">
+                <p>
+                    Cet atelier s'adresse à celles et ceux qui veulent aller au-delà d'un usage ponctuel des outils d'IA générative. Il propose, sur une journée, de découvrir les méthodes, les usages avancés et les bons réflexes qui permettent de travailler avec l'IA générative de manière plus précise, plus critique et plus efficace — que ce soit pour chercher, écrire, analyser, produire ou transformer des contenus.
+                </p>
+                <p>
+                    L'atelier s'appuie sur une approche concrète des modèles de langage : comment construire un bon contexte, orienter un modèle sans le rigidifier, travailler avec des documents, stabiliser un ton, une méthode ou un rôle, repérer les réponses inventées, et transformer une interaction vague en production exploitable. À partir de cas pratiques — assistants spécialisés, analyse de corpus, écriture augmentée, recherche documentaire, préparation de contenus — les participants apprennent à concevoir des usages situés de l'IA, plutôt qu'à simplement accumuler des "prompts".
+                </p>
+                <p>
+                    Au-delà de la prise en main, l'atelier propose une compréhension architecturale des grands modèles de langage : leur fonctionnement, leurs limites, leurs conditions d'usage et les manières de les intégrer dans des pratiques concrètes. Il accompagne les participants dans l'analyse et la maîtrise des outils, des méthodes et des bonnes pratiques nécessaires pour utiliser l'IA générative avec efficacité, discernement et autonomie.
+                </p>
+            </div>
+        </details>
     </div>
 
     <!-- Animation rétropropagation -->
@@ -1377,21 +1439,26 @@
     <div class="formation-card">
         <div class="card-header">
             <h3>Atelier avancé — Concevoir et prototyper avec l'IA</h3>
-            <span class="price">à partir de 2 400 € HT</span>
         </div>
         <div class="meta">
             <span>2 journées · 14h</span>
             <span>Organisations, institutions, équipes projet, innovation, communication, culture</span>
         </div>
-        <p>
-            Pour les organisations qui veulent passer d'usages ponctuels de l'IA à la conception d'outils adaptés à leurs pratiques. Cet atelier accompagne les équipes dans la définition d'un besoin, le choix des bonnes briques techniques, la conception d'une architecture simple et le prototypage d'un premier outil ou scénario d'usage.
-        </p>
-        <p>
-            Au programme, selon le niveau du groupe : assistants spécialisés, travail sur documents internes, recherche augmentée, intégration d'API, automatisations de workflows, principes du RAG, conception d'interfaces, logique d'agents, limites du fine-tuning et prototypage de premières briques fonctionnelles. Chaque module articule compréhension théorique, démonstration et mise en pratique sur des cas concrets.
-        </p>
-        <p>
-            L'objectif : repartir avec une architecture claire, un prototype ou scénario de prototype, et une compréhension solide des choix techniques à faire — sans dépendre entièrement du discours des prestataires ou des plateformes.
-        </p>
+        <span class="price">à partir de 2 400 € HT</span>
+        <details>
+            <summary>Lire le descriptif</summary>
+            <div class="desc-content">
+                <p>
+                    Pour les organisations qui veulent passer d'usages ponctuels de l'IA à la conception d'outils adaptés à leurs pratiques. Cet atelier accompagne les équipes dans la définition d'un besoin, le choix des bonnes briques techniques, la conception d'une architecture simple et le prototypage d'un premier outil ou scénario d'usage.
+                </p>
+                <p>
+                    Au programme, selon le niveau du groupe : assistants spécialisés, travail sur documents internes, recherche augmentée, intégration d'API, automatisations de workflows, principes du RAG, conception d'interfaces, logique d'agents, limites du fine-tuning et prototypage de premières briques fonctionnelles. Chaque module articule compréhension théorique, démonstration et mise en pratique sur des cas concrets.
+                </p>
+                <p>
+                    L'objectif : repartir avec une architecture claire, un prototype ou scénario de prototype, et une compréhension solide des choix techniques à faire — sans dépendre entièrement du discours des prestataires ou des plateformes.
+                </p>
+            </div>
+        </details>
     </div>
 
     <!-- Animation similarité cosinus -->
@@ -1547,22 +1614,27 @@
     <div class="formation-card">
         <div class="card-header">
             <h3>Blockchain — Comprendre et démystifier</h3>
-            <span class="price">à partir de 1 200 € HT</span>
         </div>
         <div class="meta">
             <span>1 journée (7h)</span>
             <span>6 à 15 personnes</span>
             <span>Dirigeants, équipes métier, innovation</span>
         </div>
-        <p>
-            Une journée pour comprendre ce que recouvrent réellement les technologies blockchain : smart contracts, wallets, DAOs, NFTs, tokenisation, finance décentralisée, gouvernance on-chain et infrastructures Web3. L'objectif est de sortir à la fois du jargon technique et des discours caricaturaux, pour comprendre ce que ces technologies permettent, ce qu'elles déplacent, et dans quel cas leur usage a réellement du sens.
-        </p>
-        <p>
-            Le contenu de la formation peut être adapté selon les besoins du groupe : découverte générale de la blockchain, compréhension des smart contracts, usages artistiques et culturels des NFTs, fonctionnement de la DeFi, gouvernance des DAOs, logiques de tokenisation, ou analyse critique des imaginaires Web3. Selon le niveau des participants, la journée peut prendre la forme d'une introduction structurée, d'un atelier d'acculturation, ou d'un approfondissement orienté vers des cas d'usage précis.
-        </p>
-        <p>
-            Cette formation est proposée par quelqu'un qui pratique ces technologies depuis 2017, et non par quelqu'un qui les observe de loin. J'ai exposé avec l'<a href="https://ethereum.org/foundation/" target="_blank" rel="noopener">Ethereum Foundation</a> et travaillé avec des acteurs majeurs comme <a href="https://aragon.org/" target="_blank" rel="noopener">Aragon</a> ou <a href="https://balancer.fi/" target="_blank" rel="noopener">Balancer</a>. L'approche mêle donc compréhension technique, expérience de terrain et lecture critique des imaginaires Web3.
-        </p>
+        <span class="price">à partir de 1 200 € HT</span>
+        <details>
+            <summary>Lire le descriptif</summary>
+            <div class="desc-content">
+                <p>
+                    Une journée pour comprendre ce que recouvrent réellement les technologies blockchain : smart contracts, wallets, DAOs, NFTs, tokenisation, finance décentralisée, gouvernance on-chain et infrastructures Web3. L'objectif est de sortir à la fois du jargon technique et des discours caricaturaux, pour comprendre ce que ces technologies permettent, ce qu'elles déplacent, et dans quel cas leur usage a réellement du sens.
+                </p>
+                <p>
+                    Le contenu de la formation peut être adapté selon les besoins du groupe : découverte générale de la blockchain, compréhension des smart contracts, usages artistiques et culturels des NFTs, fonctionnement de la DeFi, gouvernance des DAOs, logiques de tokenisation, ou analyse critique des imaginaires Web3. Selon le niveau des participants, la journée peut prendre la forme d'une introduction structurée, d'un atelier d'acculturation, ou d'un approfondissement orienté vers des cas d'usage précis.
+                </p>
+                <p>
+                    Cette formation est proposée par quelqu'un qui pratique ces technologies depuis 2017, et non par quelqu'un qui les observe de loin. J'ai exposé avec l'<a href="https://ethereum.org/foundation/" target="_blank" rel="noopener">Ethereum Foundation</a> et travaillé avec des acteurs majeurs comme <a href="https://aragon.org/" target="_blank" rel="noopener">Aragon</a> ou <a href="https://balancer.fi/" target="_blank" rel="noopener">Balancer</a>. L'approche mêle donc compréhension technique, expérience de terrain et lecture critique des imaginaires Web3.
+                </p>
+            </div>
+        </details>
         <!-- Animation blockchain -->
         <div class="backprop-container" style="margin-top: 32px;">
             <canvas id="blockchain-canvas" width="800" height="160"></canvas>

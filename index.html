@@ -1935,7 +1935,7 @@
 
 <!-- ── Footer ──────────────────────────────────────── -->
 <footer>
-    <span class="copy">&copy; 2025 Alexandre Rouxel</span>
+    <span class="copy">&copy; 2026 Alexandre Rouxel</span>
     <div class="footer-links">
         <a href="https://distributedgallery.com" target="_blank" rel="noopener">Distributed Gallery</a>
         <a href="https://x.com/distribgallery" target="_blank" rel="noopener">X</a>
@@ -1989,17 +1989,27 @@
 
     const original = 'sous 48h.';
     const replacement = 'au plus vite.';
-    let animating = false;
+    let timers = [];
+
+    function clearAllTimers() {
+        timers.forEach(id => clearInterval(id));
+        timers = [];
+    }
+
+    function reset() {
+        clearAllTimers();
+        target.textContent = original;
+        target.classList.remove('typing');
+    }
 
     const observer = new IntersectionObserver(entries => {
         const entry = entries[0];
-        if (entry.isIntersecting && !animating) {
-            animating = true;
-            setTimeout(() => runTypewriter(), 1200);
-        } else if (!entry.isIntersecting && !animating) {
-            // Reset quand on sort du viewport
-            target.textContent = original;
-            target.classList.remove('typing');
+        if (entry.isIntersecting) {
+            reset();
+            const delay = setTimeout(() => runTypewriter(), 1200);
+            timers.push(delay);
+        } else {
+            reset();
         }
     }, { threshold: 0.5 });
 
@@ -2009,17 +2019,17 @@
         target.classList.add('typing');
         let i = original.length;
 
-        // Phase 1 : effacer "sous 48h."
         const eraseInterval = setInterval(() => {
             i--;
             target.textContent = original.substring(0, i);
             if (i <= 0) {
                 clearInterval(eraseInterval);
-                setTimeout(() => typeText(), 400);
+                const pause = setTimeout(() => typeText(), 400);
+                timers.push(pause);
             }
         }, 80);
+        timers.push(eraseInterval);
 
-        // Phase 2 : écrire "au plus vite."
         function typeText() {
             let j = 0;
             const typeInterval = setInterval(() => {
@@ -2027,12 +2037,13 @@
                 target.textContent = replacement.substring(0, j);
                 if (j >= replacement.length) {
                     clearInterval(typeInterval);
-                    setTimeout(() => {
+                    const end = setTimeout(() => {
                         target.classList.remove('typing');
-                        animating = false;
                     }, 800);
+                    timers.push(end);
                 }
             }, 70);
+            timers.push(typeInterval);
         }
     }
 })();

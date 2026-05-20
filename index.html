@@ -1989,13 +1989,17 @@
 
     const original = 'sous 48h.';
     const replacement = 'au plus vite.';
-    let fired = false;
+    let animating = false;
 
     const observer = new IntersectionObserver(entries => {
-        if (entries[0].isIntersecting && !fired) {
-            fired = true;
-            observer.disconnect();
+        const entry = entries[0];
+        if (entry.isIntersecting && !animating) {
+            animating = true;
             setTimeout(() => runTypewriter(), 1200);
+        } else if (!entry.isIntersecting && !animating) {
+            // Reset quand on sort du viewport
+            target.textContent = original;
+            target.classList.remove('typing');
         }
     }, { threshold: 0.5 });
 
@@ -2003,13 +2007,12 @@
 
     function runTypewriter() {
         target.classList.add('typing');
-        let text = original;
-        let i = text.length;
+        let i = original.length;
 
         // Phase 1 : effacer "sous 48h."
         const eraseInterval = setInterval(() => {
             i--;
-            target.textContent = text.substring(0, i);
+            target.textContent = original.substring(0, i);
             if (i <= 0) {
                 clearInterval(eraseInterval);
                 setTimeout(() => typeText(), 400);
@@ -2026,6 +2029,7 @@
                     clearInterval(typeInterval);
                     setTimeout(() => {
                         target.classList.remove('typing');
+                        animating = false;
                     }, 800);
                 }
             }, 70);
